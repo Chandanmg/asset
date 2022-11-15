@@ -1,0 +1,74 @@
+<div fxLayout="column" style="margin-top: 2%;">
+    <div fxLayout="row">
+        <div style="width: 50%;">
+            <button mat-flat-button style="background-color: rgb(34, 84, 34); color: aliceblue; border-radius: 15px;">Add New Insurance</button>
+        </div>
+        <div fxLayout="column" style="width: 50%;">
+            <div fxLayoutAlign="center center" class="leftbox" style="width: 100%;">
+                <span style="font-size: 18px; margin-left: 2%;">Notify Person</span>
+            </div>
+            <div fxLayoutAlign="center center" class="rightbox" style="width: 100%;">
+                <span style="font-size: 18px; margin-left: 2%;"> </span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2%;">
+        <span style="color: rgb(51, 97, 51); font-size: 18px; font-weight: 500;">Insurance History</span>
+    </div>
+
+    <div fxLayout="column">
+        <table mat-table [dataSource]="dataSource" >
+
+            <ng-container matColumnDef="sl">
+              <th mat-header-cell *matHeaderCellDef>Sl.No </th>
+              <td mat-cell *matCellDef="let element; let i= index"> {{i+1}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="number">
+              <th mat-header-cell *matHeaderCellDef> Insurance Number </th>
+              <td mat-cell *matCellDef="let element"> {{element.insurancenumber}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Insurance Cover Period </th>
+              <td mat-cell *matCellDef="let element"> {{element.floors}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="vendor">
+              <th mat-header-cell *matHeaderCellDef> Insurance Vendor </th>
+              <td mat-cell *matCellDef="let element"> {{element.insurancevendor}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef> Insurance Value </th>
+                <td mat-cell *matCellDef="let element"> {{element.insuranceinsuredvalue}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="viewdocument">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <button mat-flat-button color="primary" >
+                        View Document
+                    </button> 
+                </td>
+            </ng-container>
+            
+            <!-- <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element"> 
+                    <button mat-icon-button color="warn" (click)="onDelete(element.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button> 
+                </td>
+            </ng-container> -->
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>  
+        <mat-paginator [pageSizeOptions]="[2, 5, 10]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+        </mat-paginator> 
+    </div>
+</div>

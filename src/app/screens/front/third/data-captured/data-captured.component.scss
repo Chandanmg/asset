@@ -1,0 +1,61 @@
+mat-toolbar{
+    align-items: center;
+    justify-content: center;
+}
+
+.header{
+    width: auto;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+hr{
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.middle{
+    width: auto;
+    margin-top: 1%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.middle2{
+    margin-bottom: 1%;
+}
+
+table {
+    width: 100%;
+}
+
+.checkbox{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+
+.radio{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+// th {
+//     background-color: red;
+//     border: 1px solid red;
+//   }
+//   td {
+//     border: 1px solid #dddddd;
+//   }
+//   td, th {
+//     text-align: left;
+//     padding: 8px;
+//   }
+  
+//   tr:nth-child(even) {
+//     background-color: #dddddd;
+//   }

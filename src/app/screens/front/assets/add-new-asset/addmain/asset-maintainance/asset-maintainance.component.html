@@ -1,0 +1,53 @@
+<div fxLayout="column">
+    <div>
+        <span class="asset">Maintenance Settings</span>
+    </div>
+    <div>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <div fxLayout="column">
+            <div fxLayout="row">
+                <div style="width: 50%;">
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Maintenance Frequency</span>
+                        </div>
+                        <div class="middle2" fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter Maintenance Due Date</mat-label>
+                                <input width="100%" matInput name="maintenancedue" ngModel #mdate="ngModel" type="date" placeholder="Enter name" required>
+                                <!-- <mat-error *ngIf="mdate.invalid">Enter name</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                    </div>
+            
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Maintenance Reminder</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <input matInput name="mreminder" ngModel #mreminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                <mat-error *ngIf="mreminder.invalid">Enter Days Remaining</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 50%;">
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Notify To</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <input matInput name="mnotifyto" ngModel #mnotify="ngModel" type="email" placeholder="Enter Email Id" required>
+                                <mat-error *ngIf="mnotify.invalid">Enter Email Id</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

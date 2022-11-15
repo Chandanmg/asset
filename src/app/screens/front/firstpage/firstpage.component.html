@@ -1,0 +1,116 @@
+<mat-toolbar color="primary">
+    <span>Account Setup</span>
+</mat-toolbar>
+<div class="header" fxLayout="row">
+    <div fxLayoutAlign="start center" style="width: 50%;" fxLayoutGap="10px">
+        <button mat-raised-button color="primary">step1</button>
+        <button mat-raised-button color="primary" style="background-color:darkgray">2</button>
+        <button mat-raised-button color="primary" style="background-color:darkgray">3</button>
+    </div>
+    <div fxLayoutAlign="end center" style="width: 50%;" >
+        <span style="font-size: 20px;">Organizatin details</span>
+    </div>
+</div>
+<hr>
+
+<div class="middle">
+    <form (submit)="firstform(first)" #first="ngForm">
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Organization Name</span>
+            </div>
+            <div class="middle2" fxLayoutAlign="start center">
+                <mat-form-field appearance="outline">
+                    <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter organization name" required>
+                    <mat-error *ngIf="organizationname.invalid">Enter organization name</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Country</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Country</mat-label>
+                    <select matNativeControl name="country" ngModel #selectedCountry="ngModel" required>
+                    <option value="" selected></option>
+                    <option *ngFor="let country of country" [value]="country.value">
+                        {{country.viewValue}}
+                    </option>
+                    </select>
+                    <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Address</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="address" ngModel #address="ngModel" type="text" placeholder="Enter address" required>
+                    <mat-error *ngIf="address.invalid">Enter country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">City</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="city" ngModel #city="ngModel" type="text" placeholder="Enter City" required>
+                    <mat-error *ngIf="city.invalid">Enter country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">State</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="state" ngModel #state="ngModel" type="text" placeholder="Enter state" required>
+                    <mat-error *ngIf="state.invalid">Enter country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Postal Code</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="post" ngModel #post="ngModel" type="text" placeholder="Enter postal code" required>
+                    <mat-error *ngIf="post.invalid">Enter country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Currency</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Currency</mat-label>
+                    <select matNativeControl name="currency" ngModel #selectedCurrency="ngModel" required>
+                    <option value="" selected></option>
+                    <option *ngFor="let currency of currency" [value]="currency.value">
+                        {{currency.viewValue}}
+                    </option>
+                    </select>
+                    <mat-error *ngIf="selectedCurrency.invalid">Enter Currency</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
+            <div>
+                <button mat-raised-button style="background-color: grey; width: 100px;" (click)="onBack()">back</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" style="width: 100px;" type="submit">next</button>
+            </div>
+        </div>
+    </form>
+</div>

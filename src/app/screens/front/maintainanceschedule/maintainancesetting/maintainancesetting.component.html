@@ -1,0 +1,95 @@
+<div>
+    <mat-card>
+        <form (submit)="filterform(first)" #first="ngForm">
+            <div class="filter" fxLayoutAlign="start center">
+                <span>Maintenance Setting</span>
+            </div>
+            <div fxLayout="row" fxLayoutGap="2%">
+                <div fxLayoutGap="2%" fxLayout="column"> 
+                    <div fxLayout="column">
+                        <div fxLayoutAlign="start center">
+                            <span style="font-size: 16px;">Maintenance Title</span>
+                        </div>
+                        <div fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter Title" required>
+                                <mat-error *ngIf="organizationname.invalid">Enter Title</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <div fxLayoutAlign="start center">
+                            <span style="font-size: 16px;">Start Date</span>
+                        </div>
+                        <div fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="date" placeholder="Enter Date" required>
+                                <mat-error *ngIf="organizationname.invalid">Enter Date</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="column">
+                        <div fxLayoutAlign="start center">
+                            <span style="font-size: 16px;">End Date</span>
+                        </div>
+                        <div fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="date" placeholder="Enter Date" required>
+                                <mat-error *ngIf="organizationname.invalid">Enter date</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <!-- <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <input width="100%" matInput name="name" ngModel #cost="ngModel" type="text" placeholder="Cost" required>
+                            <mat-error *ngIf="cost.invalid">Cost</mat-error>
+                        </mat-form-field>
+                    </div> -->
+                </div>
+
+                <div fxLayoutGap="2%" fxLayout="column">
+                    <div fxLayout="column">
+                        <div fxLayoutAlign="start center">
+                            <span style="font-size: 16px;">Maintenance Details</span>
+                        </div>
+                        <div fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter Details" required>
+                                <mat-error *ngIf="organizationname.invalid">Enter Details</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="2%">
+                        <div fxLayout="column">
+                            <div fxLayoutAlign="start center">
+                                <span style="font-size: 16px;">Maintenance By</span>
+                            </div>
+                            <div fxLayoutAlign="start center">
+                                <mat-form-field appearance="outline">
+                                    <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter Date" required>
+                                    <mat-error *ngIf="organizationname.invalid">Enter Date</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div fxLayout="column">
+                            <div fxLayoutAlign="start center">
+                                <span style="font-size: 16px;">Cost Of Repair</span>
+                            </div>
+                            <div fxLayoutAlign="start center" style="margin-right: 10px;">
+                                <mat-form-field appearance="outline">
+                                    <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter Cost" required>
+                                    <mat-error *ngIf="organizationname.invalid">Enter Cost</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div fxLayoutAlign="end center">
+                <button mat-flat-button>Save</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

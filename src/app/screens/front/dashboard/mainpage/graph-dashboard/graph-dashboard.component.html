@@ -1,0 +1,38 @@
+<div fxLayout="row" class="graph" fxLayoutGap="2%">
+    <div style="width: 50%;">
+        <mat-card class="card">
+            <div fxLayout="column">
+                <div style="margin-bottom: 1%;">
+                    <span class="plot">Assets Type Plot</span>
+                </div>
+                <div>
+                    <mat-radio-group>
+                        <mat-radio-button value="1" checked="true">By Number Of Assets</mat-radio-button><br>
+                        <mat-radio-button value="2">By Value Of Assets</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div style="margin-top: 2%;">
+                    <div id="asset" style="width: 100%; height: 300px"></div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div style="width: 50%;">
+        <mat-card class="card">
+            <div fxLayout="column">
+                <div style="margin-bottom: 1%;">
+                    <span class="plot">Building Plot</span>
+                </div>
+                <div>
+                    <mat-radio-group>
+                        <mat-radio-button value="1" checked="true">By Number Of Assets</mat-radio-button><br>
+                        <mat-radio-button value="2">By Value Of Assets</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div style="margin-top: 2%;">
+                    <div id="building" style="width: 100%; height: 300px"></div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

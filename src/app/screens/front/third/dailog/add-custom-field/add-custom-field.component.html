@@ -1,0 +1,48 @@
+<div mat-dialog-content>
+    <form (submit)="addCustom(first)" #first="ngForm">
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Field</span>
+            </div>
+            <div class="middle2" fxLayoutAlign="start center">
+                <mat-form-field appearance="outline">
+                    <input width="100%" matInput name="field" ngModel #field="ngModel" type="text" placeholder="Enter field" required>
+                    <mat-error *ngIf="field.invalid">Enter Field</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Description</span>
+            </div>
+            <div class="middle2" fxLayoutAlign="start center">
+                <mat-form-field appearance="outline">
+                    <input width="100%" matInput name="description" ngModel #description="ngModel" type="text" placeholder="Enter description" required>
+                    <mat-error *ngIf="description.invalid">Enter Field</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Example</span>
+            </div>
+            <div class="middle2" fxLayoutAlign="start center">
+                <mat-form-field appearance="outline">
+                    <input width="100%" matInput name="example" ngModel #example="ngModel" type="text" placeholder="Enter example" required>
+                    <mat-error *ngIf="example.invalid">Enter Example</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
+            <div>
+                <button mat-raised-button style="background-color: grey; width: 100px;" (click)="onBack()">Cancel</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" style="width: 100px;" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,90 @@
+<div fxLayout="column">
+    <div>
+        <span class="asset">Allocate Asset</span>
+    </div>
+    <div>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <div fxLayout="row">
+            <div style="width: 50%;">
+                <div fxLayout="row">
+                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                        <span class="gap" style="font-size: 20px;">To Building</span>
+                    </div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Building</mat-label>
+                                <select matNativeControl name="tobuilding" ngModel #atype="ngModel" required>
+                                    <option value="" selected></option>
+                                    <option *ngFor="let building of tobuilding" [value]="building.value">
+                                        {{building.viewValue}}
+                                    </option>
+                                </select>
+                            <!-- <input width="100%" matInput name="name" ngModel #aname="ngModel" type="text" placeholder="Enter name" required>
+                            <mat-error *ngIf="aname.invalid">Enter name</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+        
+                <div fxLayout="row">
+                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                        <span class="gap" style="font-size: 20px;">To Department</span>
+                    </div>
+                    <div class="middle2">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Department</mat-label>
+                            <select matNativeControl name="todepartment" ngModel #atype="ngModel" required>
+                                <option value="" selected></option>
+                                <option *ngFor="let department of todepartment" [value]="department.value">
+                                    {{department.viewValue}}
+                                </option>
+                            </select>
+                            <!-- <input matInput name="floors" ngModel #snumber="ngModel" type="text" placeholder="Enter Total floors" required>
+                            <mat-error *ngIf="snumber.invalid">Enter No. of floors</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 50%;">
+                <div fxLayout="row">
+                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                        <span class="gap" style="font-size: 20px;">To Location</span>
+                    </div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Location</mat-label>
+                            <select matNativeControl name="tolocation" ngModel #atype="ngModel" required>
+                                <option value="" selected></option>
+                                <option *ngFor="let location of tolocation" [value]="location.value">
+                                    {{location.viewValue}}
+                                </option>
+                            </select>
+                            <!-- <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter name" required>
+                            <mat-error *ngIf="organizationname.invalid">Enter name</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+        
+                <div fxLayout="row">
+                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                        <span class="gap" style="font-size: 20px;">To Person</span>
+                    </div>
+                    <div class="middle2">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select Person</mat-label>
+                            <select matNativeControl name="toperson" ngModel #atype="ngModel" required>
+                                <option value="" selected></option>
+                                <option *ngFor="let person of toperson" [value]="person.value">
+                                    {{person.viewValue}}
+                                </option>
+                            </select>
+                            <!-- <input matInput name="floors" ngModel #floors="ngModel" type="text" placeholder="Enter Total floors" required>
+                            <mat-error *ngIf="floors.invalid">Enter No. of floors</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

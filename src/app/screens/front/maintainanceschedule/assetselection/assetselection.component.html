@@ -1,0 +1,112 @@
+<div>
+    <mat-card>
+        <form (submit)="filterform(first)" #first="ngForm">
+            <div class="filter" fxLayoutAlign="start center">
+                <span>Asset Selection</span>
+            </div>
+            <div fxLayout="row" fxLayoutGap="2%">
+                <div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Asset Name</mat-label>
+                            <select matNativeControl name="filtername" ngModel #filterassetname="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let assetname of filterAssetName" [value]="assetname.filterAssetName">
+                                {{assetname.filterAssetName}}
+                            </option>
+                            </select>
+                            <!-- <input width="100%" matInput name="filtername" ngModel #filtername="ngModel" type="text" placeholder="Asset Name" required>
+                            <mat-error *ngIf="filtername.invalid">Asset Name</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="middle2">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Asset Type</mat-label>
+                            <select matNativeControl name="filterassettype" ngModel #filterassettype="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let assettype of filterAssetType" [value]="assettype.filterAssetType">
+                                {{assettype.filterAssetType}}
+                            </option>
+                            </select>
+                            <!-- <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Purchase Date</mat-label>
+                            <select matNativeControl name="filterpurchasedate" ngModel #filterpurchasedate="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let assetdate of filterAssetPurchaseDate" [value]="assetdate.filterAssetPurchaseDate">
+                                {{assetdate.filterAssetPurchaseDate}}
+                            </option>
+                            </select>
+                            <!-- <input width="100%" matInput name="filterpurchasedate" ngModel #date="ngModel" type="date" placeholder="Purchase Date" required>
+                            <mat-error *ngIf="date.invalid">Purchase Date</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <!-- <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <input width="100%" matInput name="name" ngModel #cost="ngModel" type="text" placeholder="Cost" required>
+                            <mat-error *ngIf="cost.invalid">Cost</mat-error>
+                        </mat-form-field>
+                    </div> -->
+                </div>
+
+                <div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Building</mat-label>
+                            <select matNativeControl name="filterbuilding" ngModel #building="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let tobuilding of filterAssetBuilding" [value]="tobuilding.filterAssetBuilding">
+                                {{tobuilding.filterAssetBuilding}}
+                            </option>
+                            </select>
+                            <!-- <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="middle2">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Department</mat-label>
+                            <select matNativeControl name="filterdepartment" ngModel #department="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let todepartment of filterAssetDepartment" [value]="todepartment.filterAssetDepartment">
+                                {{todepartment.filterAssetDepartment}}
+                            </option>
+                            </select>
+                            <!-- <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Location</mat-label>
+                            <select matNativeControl name="filterlocation" ngModel #location="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let tolocation of filterAssetLocation" [value]="tolocation.filterAssetLocation">
+                                {{tolocation.filterAssetLocation}}
+                            </option>
+                            </select>
+                            <!-- <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div class="middle2" fxLayoutAlign="start center">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Person</mat-label>
+                            <select matNativeControl name="filterperson" ngModel #person="ngModel" required>
+                            <option value="" selected></option>
+                            <option *ngFor="let toperson of filterAssetPerson" [value]="toperson.filterAssetPerson">
+                                {{toperson.filterAssetPerson}}
+                            </option>
+                            </select>
+                            <!-- <mat-error *ngIf="selectedCountry.invalid">Enter country</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div fxLayoutAlign="end center">
+                <button mat-flat-button>apply filter</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

@@ -1,0 +1,57 @@
+<div class="maindiv" >
+    <mat-card>
+        <form (submit)="onSubmit(signup)" #signup="ngForm">
+            <div class="card-div">
+                <div>
+                    <div>
+                        <label>First Name</label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input matInput name="name" ngModel #inputName="ngModel" type="text" required placeholder="Enter FirstName">
+                            <mat-error *ngIf="inputName.invalid">Please enter First Name</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Last Name</label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input matInput name="lastname" ngModel #inputlastname="ngModel" type="text" required placeholder="Enter LastName">
+                            <mat-error *ngIf="inputlastname.invalid">Please enter Last Name</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Email</label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input matInput name="email" ngModel #inputEmail="ngModel" type="email" required email placeholder="Enter email">
+                            <mat-error *ngIf="inputEmail.invalid">Please enter valid email</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>Password</label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input matInput name="password" ngModel type="password" required #inputPassword="ngModel" placeholder="Enter password">
+                            <mat-error *ngIf="inputPassword.invalid">Please enter valid password</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" type="submit">SIGNUP</button>
+                    <a href="">back to signIn</a>
+                </div>
+            </div>
+            
+        </form>
+    </mat-card>
+</div>

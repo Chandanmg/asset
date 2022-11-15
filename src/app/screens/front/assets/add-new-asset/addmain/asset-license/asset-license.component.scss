@@ -1,0 +1,25 @@
+.asset{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 128, 58);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.maindiv{
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+mat-divider{
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    border-top-width: 2px;
+    border-top-color: green;
+}
+
+button{
+    background-color: rgb(4, 102, 81);
+    color: white;
+    border-radius: 15px;
+}

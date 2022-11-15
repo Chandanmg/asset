@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <span>Account Setup</span>
+</mat-toolbar>
+<div class="header" fxLayout="row">
+    <div fxLayoutAlign="start center" style="width: 50%;" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" style="background-color:darkgray">1</button>
+        <button mat-raised-button color="primary">step2</button>
+        <button mat-raised-button color="primary" style="background-color:darkgray">3</button>
+    </div>
+    <div fxLayoutAlign="end center" style="width: 50%;" >
+        <span style="font-size: 20px;">Asset details</span>
+    </div>
+</div>
+<hr>
+
+<div>
+    <app-buiding></app-buiding>
+</div>
+<div fxLayout="row" class="department">
+    <div style="width: 50%;">
+        <app-department></app-department>
+    </div>
+    <div style="width: 50%;">
+        <app-location></app-location>
+    </div>
+</div>
+<div>
+    <app-user></app-user>
+</div>
+<div class="button" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px">
+    <div>
+        <button mat-raised-button color="primary" style="background-color:darkgray; width: 120px;" (click)="back()">back</button>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" style="width: 120px;" (click)="next()">next</button>
+    </div>
+</div>
+<div>
+<br>
+</div>

@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+    <div fxLayout="row" style="width: 100%;">
+        <div class="logo" fxLayoutAlign="start center">
+            <span>logo</span>
+        </div>
+        <div class="companyname" fxLayoutAlign="center center">
+            <span>Company Name</span>
+        </div>
+        <div class="user" fxLayoutAlign="end center">
+            <mat-icon>perm_identity</mat-icon>&nbsp;
+            <span>{{loginUser}}</span>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">dashboard</mat-icon>
+                    <span>Dashboard</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">business</mat-icon>
+                    <span>Assets</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">assignment</mat-icon>
+                    <span>Reports</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">hotel</mat-icon>
+                    <span>Plan Maintainance</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">add_location</mat-icon>
+                    <span>Move Assets</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but">
+                    <mat-icon style="color: green;">settings</mat-icon>
+                    <span>Setup</span>
+            </button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div fxLayout="column">
+            <div style="width: 100%;">
+                <div style="margin-top: 1%; margin-left: 1%; width: 50%;">
+                    <span style="font-size: 22px; color:rgb(79, 78, 78)">Asset Reservation</span>
+                </div>
+            </div>
+            <div class="content">
+                <div fxLayout="row" fxLayoutGap="2%">
+                    <div>
+                        <app-asset-reservation-selection></app-asset-reservation-selection>
+                    </div>
+                    <div>
+                        <app-asset-reservation-setting></app-asset-reservation-setting>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <app-asset-reservation-table></app-asset-reservation-table>
+            </div>
+            <br>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

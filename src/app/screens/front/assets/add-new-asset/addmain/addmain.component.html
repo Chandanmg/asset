@@ -1,0 +1,741 @@
+<div style="margin-top: 1%; margin-left: 1%">
+    <span style="font-size: 20px; color:rgb(79, 78, 78)">Add New Assets</span>
+</div>
+<div fxLayout="column" class="maindiv">
+    <form (submit)="addNewAsset(add)" #add="ngForm">
+        <!-- <div fxLayout="column" class="maindiv"> -->
+
+
+
+
+            <!-- <div>
+                <app-asset-basic></app-asset-basic>
+            </div> -->
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Asset Basic Information</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Asset Name</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="assetname" ngModel #assetname="ngModel" type="text" placeholder="Enter asset name" required>
+                                            <mat-error *ngIf="assetname.invalid">Enter asset name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Asset Serial Number</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="assetserial" ngModel #serial="ngModel" type="text" placeholder="Enter Serial Number" required>
+                                            <mat-error *ngIf="serial.invalid">Enter serial aumber</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Cost</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="basiccost" ngModel #cost="ngModel" type="number" placeholder="Enter cost" required>
+                                            <mat-error *ngIf="cost.invalid">Enter cost</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Brand</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="basicbrand" ngModel #brand="ngModel" type="text" placeholder="Enter brand" required>
+                                            <mat-error *ngIf="brand.invalid">Enter brand</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Asset Type</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Asset Type</mat-label>
+                                            <select matNativeControl name="assettype" ngModel #atype="ngModel" required>
+                                                <option value="" selected></option>
+                                                <option *ngFor="let asset of assettype" [value]="asset.assettype">
+                                                    {{asset.assettype}}
+                                                </option>
+                                            </select>
+                                            <!-- <input width="100%" matInput name="name" ngModel #atype="ngModel" type="text" placeholder="Enter asset type" required> -->
+                                            <!-- <mat-error *ngIf="atype.invalid">Select asset type</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Purchase Date</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Choose purchase date</mat-label>
+                                            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                                            <input matInput name="purchasedate" ngModel #pdate="ngModel" type="date" placeholder="select date" required>
+                                            <!-- <mat-error *ngIf="pdate.invalid">Select purchase date</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Purchased From</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="basicvendorname" ngModel #vendor="ngModel" type="text" placeholder="Enter Vendor Name" required>
+                                            <mat-error *ngIf="vendor.invalid">Enter Vendor Name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Model</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="basicassetmodel" ngModel #model="ngModel" type="text" placeholder="Enter Asset Model" required>
+                                            <mat-error *ngIf="model.invalid">Enter model name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="2%" fxLayoutAlign="end center">
+                            <div>
+                                <button mat-flat-button class="button" type="button">
+                                    <mat-icon>add</mat-icon>&nbsp;
+                                    <span>Upload Asset Image</span>
+                                </button>
+                            </div>
+                            <div>
+                                <button mat-flat-button class="button" type="button">
+                                    <mat-icon>add</mat-icon>&nbsp;
+                                    <span>Upload Invoice</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+            <!-- <div>
+                <app-asset-warranty></app-asset-warranty>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Warrenty Information</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Warrenty Due Date</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Choose a warrenty due Date</mat-label>
+                                            <input width="100%" matInput name="warduedate" ngModel #wddate="ngModel" type="date" placeholder="Enter name" required>
+                                            <!-- <mat-error *ngIf="wddate.invalid">Select warrenty due Date</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Expiry Reminder</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="warrentyexpiryreminder" ngModel #ereminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                            <mat-error *ngIf="ereminder.invalid">Enter expiry reminder</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Notify To</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="warnotifyto" ngModel #notifyto="ngModel" type="email" placeholder="Enter Email Id" required>
+                                            <mat-error *ngIf="notifyto.invalid">Enter Email Id</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayoutAlign="end center">
+                                    <button mat-flat-button class="button" type="button">
+                                        <mat-icon>add</mat-icon>&nbsp;
+                                        <span>Upload Warrenty Document</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+            <!-- <div>
+                <app-asset-allocate></app-asset-allocate>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Allocate Asset</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="row">
+                        <div style="width: 50%;">
+                            <div fxLayout="row">
+                                <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                    <span class="gap" style="font-size: 20px;">To Building</span>
+                                </div>
+                                <div class="middle2" fxLayoutAlign="start center">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Building</mat-label>
+                                            <select matNativeControl name="allocatetobuilding" ngModel #atype="ngModel" required>
+                                                <option value="" selected></option>
+                                                <option *ngFor="let building of allocatetobuilding" [value]="building.allocatetobuilding">
+                                                    {{building.allocatetobuilding}}
+                                                </option>
+                                            </select>
+                                        <!-- <input width="100%" matInput name="name" ngModel #aname="ngModel" type="text" placeholder="Enter name" required>
+                                        <mat-error *ngIf="aname.invalid">Enter name</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                    
+                            <div fxLayout="row">
+                                <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                    <span class="gap" style="font-size: 20px;">To Department</span>
+                                </div>
+                                <div class="middle2">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Department</mat-label>
+                                        <select matNativeControl name="allocatetodepartment" ngModel #atype="ngModel" required>
+                                            <option value="" selected></option>
+                                            <option *ngFor="let department of allocatetodepartment" [value]="department.allocatetodepartment">
+                                                {{department.allocatetodepartment}}
+                                            </option>
+                                        </select>
+                                        <!-- <input matInput name="floors" ngModel #snumber="ngModel" type="text" placeholder="Enter Total floors" required>
+                                        <mat-error *ngIf="snumber.invalid">Enter No. of floors</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 50%;">
+                            <div fxLayout="row">
+                                <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                    <span class="gap" style="font-size: 20px;">To Location</span>
+                                </div>
+                                <div class="middle2" fxLayoutAlign="start center">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Location</mat-label>
+                                        <select matNativeControl name="allocatetolocation" ngModel #atype="ngModel" required>
+                                            <option value="" selected></option>
+                                            <option *ngFor="let location of allocatetolocation" [value]="location.allocatetolocation">
+                                                {{location.allocatetolocation}}
+                                            </option>
+                                        </select>
+                                        <!-- <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter name" required>
+                                        <mat-error *ngIf="organizationname.invalid">Enter name</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                    
+                            <div fxLayout="row">
+                                <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                    <span class="gap" style="font-size: 20px;">To Person</span>
+                                </div>
+                                <div class="middle2">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Select Person</mat-label>
+                                        <select matNativeControl name="allocatetoperson" ngModel #atype="ngModel" required>
+                                            <option value="" selected></option>
+                                            <option *ngFor="let person of allocatetoperson" [value]="person.allocatetoperson">
+                                                {{person.allocatetoperson}}
+                                            </option>
+                                        </select>
+                                        <!-- <input matInput name="floors" ngModel #floors="ngModel" type="text" placeholder="Enter Total floors" required>
+                                        <mat-error *ngIf="floors.invalid">Enter No. of floors</mat-error> -->
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- <div>
+                <app-asset-maintainance></app-asset-maintainance>
+            </div> -->
+            
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Maintenance Settings</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Maintenance Frequency</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Enter Maintenance Due Date</mat-label>
+                                            <input width="100%" matInput name="maintenancedue" ngModel #mdate="ngModel" type="date" placeholder="Enter name" required>
+                                            <!-- <mat-error *ngIf="mdate.invalid">Enter name</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Maintenance Reminder</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="maintainancereminder" ngModel #mreminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                            <mat-error *ngIf="mreminder.invalid">Enter Days Remaining</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Notify To</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="maintainancenotifyto" ngModel #mnotify="ngModel" type="email" placeholder="Enter Email Id" required>
+                                            <mat-error *ngIf="mnotify.invalid">Enter Email Id</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <div>
+                <app-asset-insurance></app-asset-insurance>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Insurance Details</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Insurance Number</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="insurancenumber" ngModel #insurance="ngModel" type="text" placeholder="Enter insurance" required>
+                                            <mat-error *ngIf="insurance.invalid">Enter insurance number</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Insurance Due Date</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select the date</mat-label>
+                                            <input matInput name="insurancedue" ngModel #idate="ngModel" type="date" placeholder="Days in Advance" required>
+                                            <!-- <mat-error *ngIf="idate.invalid">Enter</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Insurance Vendor</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="insurancevendor" ngModel #ivendor="ngModel" type="text" placeholder="Enter Vendor Name" required>
+                                            <mat-error *ngIf="ivendor.invalid">Enter vendor name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Notify To</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="insurancenotifyto" ngModel #inotify="ngModel" type="text" placeholder="Enter Email Id" required>
+                                            <mat-error *ngIf="inotify.invalid">Enter Email Id</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Insurance reminder</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="insurancereminder" ngModel #ireminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                            <mat-error *ngIf="ireminder.invalid">Days in Advance</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Insured Value</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="insuranceinsuredvalue" ngModel #ivalue="ngModel" type="text" placeholder="Enter value" required>
+                                            <mat-error *ngIf="ivalue.invalid">Enter value</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayoutAlign="end center">
+                            <div>
+                                <button mat-flat-button class="button" type="button">
+                                    <mat-icon>add</mat-icon>&nbsp;
+                                    <span>Upload Insurance Document</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- <div>
+                <app-asset-license></app-asset-license>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">License Details</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">License Number</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="licencenumber" ngModel #lnumber="ngModel" type="text" placeholder="Enter Licence number" required>
+                                            <mat-error *ngIf="lnumber.invalid">Enter Licence number</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">License Due Date</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="licencedate" ngModel #ldate="ngModel" type="date" placeholder="Days in Advance" required>
+                                            <mat-error *ngIf="ldate.invalid">Days in Advance</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Notify To</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="licensenotify" ngModel #lnotify="ngModel" type="text" placeholder="Enter Email Id" required>
+                                            <mat-error *ngIf="lnotify.invalid">Enter Email Id</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Licence Reminder</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="licencereminder" ngModel #licencereminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                            <mat-error *ngIf="licencereminder.invalid">Days in Advance</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayoutAlign="end center">
+                            <div>
+                                <button mat-flat-button class="button" type="button">
+                                    <mat-icon>add</mat-icon>&nbsp;
+                                    <span>Upload Licence Document</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
+
+            <!-- <div>
+                <app-asset-leasing></app-asset-leasing>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Leasing Details</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Lease Start Date</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Enter Lease start Date</mat-label>
+                                            <input width="100%" matInput name="leasestartdate" ngModel #leasestartdate="ngModel" type="date" placeholder="Enter name" required>
+                                            <!-- <mat-error *ngIf="leasestartdate.invalid">Enter name</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Lease End Date</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Enter Lease End Date</mat-label>
+                                            <input matInput name="leaseenddate" ngModel #snumber="ngModel" type="date" placeholder="Enter Total floors" required>
+                                            <!-- <mat-error *ngIf="snumber.invalid">Enter No. of floors</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Notify To</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="leasenotify" ngModel #leasenotify="ngModel" type="text" placeholder="Enter Email Id" required>
+                                            <mat-error *ngIf="leasenotify.invalid">Enter Email Id</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Leased From / To</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="leasedfrom" ngModel #leasedfrom="ngModel" type="text" placeholder="Leased From / To" required>
+                                            <mat-error *ngIf="leasedfrom.invalid">Leased From / To</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayoutAlign="end center">
+                            <div>
+                                <button mat-flat-button class="button" type="button">
+                                    <mat-icon>add</mat-icon>&nbsp;
+                                    <span>Upload Lease Document</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <div>
+                <app-asset-depreciation></app-asset-depreciation>
+            </div> -->
+
+            <div fxLayout="column">
+                <div>
+                    <span class="asset">Depreciation Settings</span>
+                </div>
+                <div>
+                    <mat-divider></mat-divider>
+                </div>
+                <div>
+                    <div fxLayout="column">
+                        <!-- <div fxLayoutAlign="end center">
+                            <span>Depreciable Asset</span>
+                        </div> -->
+                        <div fxLayout="row">
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Depreciable Cost</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="depreciablecost" ngModel #dcost="ngModel" type="text" placeholder="Enter Depreciable Cost" required>
+                                            <mat-error *ngIf="dcost.invalid">Enter Depreciable Cost</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Savation Value</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="depreciablesalvationvalue" ngModel #salvationvalue="ngModel" type="text" placeholder="Enter Savation Value" required>
+                                            <mat-error *ngIf="salvationvalue.invalid">Enter Savation Value</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Depreciation Begin Date</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Select Date</mat-label>
+                                            <input matInput name="depreciablebegindate" ngModel #address="ngModel" type="date" placeholder="Enter Address" required>
+                                            <!-- <mat-error *ngIf="address.invalid">Enter Address</mat-error> -->
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 50%;">
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Asset Life</span>
+                                    </div>
+                                    <div class="middle2" fxLayoutAlign="start center">
+                                        <mat-form-field appearance="outline">
+                                            <input width="100%" matInput name="depreciableassetlife" ngModel #assetlife="ngModel" type="text" placeholder="Enter Asset Life" required>
+                                            <mat-error *ngIf="assetlife.invalid">Enter Asset Life</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                        
+                                <div fxLayout="row">
+                                    <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                                        <span class="gap" style="font-size: 20px;">Depreciation Method</span>
+                                    </div>
+                                    <div class="middle2">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput name="depreciablemethod" ngModel #dmethod="ngModel" type="text" placeholder="Enter Method Name" required>
+                                            <mat-error *ngIf="dmethod.invalid">Enter Method Name</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <!--</div> -->
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center" class="maindiv">
+            <div>
+                <button mat-raised-button style="background-color: grey; width: 100px;" type="button" (click)="onBack()">back</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" style="width: 100px;" type="submit">Save</button>
+            </div>
+        </div><br>
+    </form>
+</div>

@@ -1,0 +1,95 @@
+<div fxLayout="column">
+    <div>
+        <span class="asset">Insurance Details</span>
+    </div>
+    <div>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <div fxLayout="column">
+            <div fxLayout="row">
+                <div style="width: 50%;">
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Insurance Number</span>
+                        </div>
+                        <div class="middle2" fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="insurancenumber" ngModel #insurance="ngModel" type="text" placeholder="Enter insurance" required>
+                                <mat-error *ngIf="insurance.invalid">Enter insurance number</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+            
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Insurance Due Date</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Select the date</mat-label>
+                                <input matInput name="insurancedue" ngModel #idate="ngModel" type="date" placeholder="Days in Advance" required>
+                                <!-- <mat-error *ngIf="idate.invalid">Enter</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Insurance Vendor</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <input matInput name="ivendor" ngModel #ivendor="ngModel" type="text" placeholder="Enter Vendor Name" required>
+                                <mat-error *ngIf="ivendor.invalid">Enter vendor name</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 50%;">
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Notify To</span>
+                        </div>
+                        <div class="middle2" fxLayoutAlign="start center">
+                            <mat-form-field appearance="outline">
+                                <input width="100%" matInput name="inotifyto" ngModel #inotify="ngModel" type="text" placeholder="Enter Email Id" required>
+                                <mat-error *ngIf="inotify.invalid">Enter Email Id</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+            
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Insurance reminder</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <input matInput name="ireminder" ngModel #ireminder="ngModel" type="text" placeholder="Days in Advance" required>
+                                <mat-error *ngIf="ireminder.invalid">Days in Advance</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <div class="middle1" fxLayoutAlign="start center" style="width: 30%;">
+                            <span class="gap" style="font-size: 20px;">Insured Value</span>
+                        </div>
+                        <div class="middle2">
+                            <mat-form-field appearance="outline">
+                                <input matInput name="insuredvalue" ngModel #ivalue="ngModel" type="text" placeholder="Enter value" required>
+                                <mat-error *ngIf="ivalue.invalid">Enter value</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div fxLayoutAlign="end center">
+                <div>
+                    <button mat-flat-button>
+                        <mat-icon>add</mat-icon>&nbsp;
+                        <span>Upload Insurance Document</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

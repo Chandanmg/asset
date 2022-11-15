@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+    <div fxLayout="row" style="width: 100%;">
+        <div class="logo" fxLayoutAlign="start center">
+            <span>logo</span>
+        </div>
+        <div class="companyname" fxLayoutAlign="center center">
+            <span>Company Name</span>
+        </div>
+        <div class="user" fxLayoutAlign="end center">
+            <mat-icon>perm_identity</mat-icon>&nbsp;
+            <span>{{loginUser}}</span>
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" [routerLink]="'/dashboard'">
+                    <mat-icon style="color: green;">dashboard</mat-icon>
+                    <span class="text">Dashboard</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" [routerLink]="'/assets'">
+                    <mat-icon style="color: green;">business</mat-icon>
+                    <span class="text">Assets</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" [routerLink]="'/adddetails'">
+                    <mat-icon style="color: green;">assignment</mat-icon>
+                    <span class="text">Reports</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" >
+                    <mat-icon style="color: green;">hotel</mat-icon>
+                    <span class="text">Plan Maintainance</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" [routerLink]="'/bulkassetmoving'">
+                    <mat-icon style="color: green;">add_location</mat-icon>
+                    <span class="text">Move Assets</span>
+            </button>
+        </div>
+        <div class="buttondiv">
+            <button mat-raised-button class="but" [routerLink]="'/firstpage'">
+                    <mat-icon style="color: green;">settings</mat-icon>
+                    <span class="text">Setup</span>
+            </button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div fxLayout="column">
+            <div style="width: 100%;">
+                <div style="margin-top: 1%; margin-left: 1%; width: 50%;">
+                    <span style="font-size: 22px; color:rgb(79, 78, 78)">Maintenance Schedule Planner</span>
+                </div>
+            </div>
+            <div class="content">
+                <div fxLayout="row" fxLayoutGap="2%">
+                    <div>
+                        <app-assetselection></app-assetselection>
+                    </div>
+                    <div>
+                        <app-maintainancesetting></app-maintainancesetting>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <app-maintainanceasset></app-maintainanceasset>
+            </div>
+            <br>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

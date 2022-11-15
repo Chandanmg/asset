@@ -1,0 +1,85 @@
+<div mat-dialog-content>
+    <form (submit)="addBuilding(first)" #first="ngForm">
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Name</span>
+            </div>
+            <div class="middle2" fxLayoutAlign="start center">
+                <mat-form-field appearance="outline">
+                    <input width="100%" matInput name="name" ngModel #organizationname="ngModel" type="text" placeholder="Enter name" required>
+                    <mat-error *ngIf="organizationname.invalid">Enter name</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">No. of floors</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="floors" ngModel #floors="ngModel" type="text" placeholder="Enter Total floors" required>
+                    <mat-error *ngIf="floors.invalid">Enter No. of floors</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Address</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="address" ngModel #address="ngModel" type="text" placeholder="Enter Address" required>
+                    <mat-error *ngIf="address.invalid">Enter Address</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">City</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="city" ngModel #city="ngModel" type="text" placeholder="Enter City" required>
+                    <mat-error *ngIf="city.invalid">Enter City</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">State</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="state" ngModel #state="ngModel" type="text" placeholder="Enter State" required>
+                    <mat-error *ngIf="state.invalid">Enter State</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row">
+            <div class="middle1" fxLayoutAlign="start center">
+                <span class="gap" style="font-size: 20px;">Country</span>
+            </div>
+            <div class="middle2">
+                <mat-form-field appearance="outline">
+                    <input matInput name="country" ngModel #country="ngModel" type="text" placeholder="Enter Country" required>
+                    <mat-error *ngIf="country.invalid">Enter Country</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="end center">
+            <div>
+                <button mat-raised-button style="background-color: grey; width: 100px;" (click)="onBack()">back</button>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" style="width: 100px;" type="submit">next</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- <div mat-dialog-actions>
+    <button mat-button >No Thanks</button>
+    <button mat-button [mat-dialog-close]="" 
+               cdkFocusInitial>Ok</button>
+</div> -->
